@@ -1,0 +1,23 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+   <!-- <target name="compile">
+        <mkdir dir="build/Webcontent"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target> -->
+
+    <target name="war">
+        <mkdir dir="build/war"/>
+        <war destfile="build/war/devops.war" >
+        	<fileset dir="Webcontent"/>
+</war>
+    </target>
+
+    <target name="run">
+        <java war="build/war/devops.war" fork="true"/>
+    </target>
+
+</project>
